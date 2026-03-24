@@ -1,0 +1,138 @@
+ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:63:b0:05 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.65/24 brd 192.168.1.255 scope global dynamic noprefixroute eth0
+       valid_lft 86354sec preferred_lft 86354sec
+    inet6 fe80::5055:7b78:3aed:35bd/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+
+---------------------------------------------------------------------------
+
+ping 192.168.1.254
+PING 192.168.1.254 (192.168.1.254) 56(84) bytes of data.
+64 bytes from 192.168.1.254: icmp_seq=1 ttl=64 time=7.13 ms
+64 bytes from 192.168.1.254: icmp_seq=2 ttl=64 time=3.33 ms
+64 bytes from 192.168.1.254: icmp_seq=3 ttl=64 time=3.18 ms
+64 bytes from 192.168.1.254: icmp_seq=4 ttl=64 time=3.31 ms
+64 bytes from 192.168.1.254: icmp_seq=5 ttl=64 time=3.21 ms
+64 bytes from 192.168.1.254: icmp_seq=6 ttl=64 time=3.26 ms
+64 bytes from 192.168.1.254: icmp_seq=7 ttl=64 time=3.33 ms
+64 bytes from 192.168.1.254: icmp_seq=8 ttl=64 time=3.24 ms
+64 bytes from 192.168.1.254: icmp_seq=9 ttl=64 time=3.28 ms
+
+
+
+----------------------------------------------------------------------------
+
+
+nmap -sV -O 192.168.1.254      
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-03-24 11:18 -0400
+Nmap scan report for gpon.net (192.168.1.254)
+Host is up (0.0025s latency).
+Not shown: 996 closed tcp ports (reset)
+PORT    STATE    SERVICE   VERSION
+23/tcp  filtered telnet
+53/tcp  open     domain    Unbound
+80/tcp  open     http
+443/tcp open     ssl/https
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.98%I=7%D=3/24%Time=69C2AB42%P=x86_64-pc-linux-gnu%r(GetR
+SF:equest,4C8,"HTTP/1\.0\x20302\x20Moved\x20Temporarily\r\nConnection:\x20
+SF:close\r\nCache-Control:\x20no-cache,no-store\r\nPragma:\x20no-cache\r\n
+SF:Content-Length:\x20793\r\nSet-Cookie:\x20SID=6468685cb30dad2ba514da464f
+SF:754ea84c5cb9e6f788c35523f86f1e6941e435;\x20PATH=/;\x20HttpOnly;\x20Same
+SF:Site=strict\r\nServer:\x20\r\nAccept-Ranges:\x20bytes\r\nX-Content-Type
+SF:-Options:\x20nosniff\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Fram
+SF:e-Options:\x20SAMEORIGIN\r\nLocation:\x20https:///\r\nContent-Type:\x20
+SF:text/html;\x20charset=utf-8\r\n\r\n\n<html>\n<head>\n<title>302\x20Foun
+SF:d</title>\n</head>\n<body\x20bgcolor=\"#FFFFFF\"\x20text=\"#000000\"\x2
+SF:0link=\"#2020ff\"\x20vlink=\"#4040cc\">\n<h2>302\x20Found</h2>\n<span>T
+SF:he\x20requested\x20URL\x20is\x20going\x20to\x20be\x20https\.</span>\n<d
+SF:iv\x20style=\"display:none\">\n<span>Padding\x20so\x20that\x20MSIE\x20d
+SF:eigns\x20to\x20show\x20this\x20error\x20instead\x20of\x20its\x20own\x20
+SF:canned\x20one\.</span>\n<span>Padding\x20so\x20that\x20MSIE\x20deigns\x
+SF:20to\x20show\x20this\x20error\x20instead\x20of\x20its\x20own\x20canned\
+SF:x20one\.</span>\n<span>Padding\x20so\x20that\x20MSIE\x20deigns\x20to\x2
+SF:0show\x20this\x20error\x20instead\x20of\x20its\x20o")%r(HTTPOptions,594
+SF:,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\nContent
+SF:-Type:\x20text/html;\x20charset=iso-8859-1\r\nX-Content-Type-Options:\x
+SF:20nosniff\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Frame-Options:\
+SF:x20SAMEORIGIN\r\nCache-Control:\x20no-cache,no-store\r\nPragma:\x20no-c
+SF:ache\r\n\r\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20<html>\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x
+SF:20\x20\x20<head><title>400\x20Bad\x20Request</title></head>\n\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<body\x20bgcolo
+SF:r=\"#FFFFFF\"\x20text=\"#000000\"\x20link=\"#2020ff\"\x20vlink=\"#4040c
+SF:c\">\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2
+SF:0<h2>400\x20Bad\x20Request</h2>\nYour\x20request\x20has\x20bad\x20synta
+SF:x\x20or\x20is\x20inherently\x20impossible\x20to\x20satisfy\.\n<div\x20s
+SF:tyle=\"display:none\">\n<ajax_response_xml_root>\n<IF_ERRORSTR>SessionT
+SF:imeout</IF_ERRORSTR>\n<IF_ERRORPARAM>SUCC</IF_ERRORPARAM>\n<IF_ERRORTYP
+SF:E>SUCC</IF_ERRORTYPE>\n</ajax_response_xml_root>\n<span>Padding\x20so\x
+SF:20that\x20MSIE\x20deigns\x20to\x20show\x20this\x20e");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port443-TCP:V=7.98%T=SSL%I=7%D=3/24%Time=69C2AB48%P=x86_64-pc-linux-gnu
+SF:%r(GetRequest,41F1,"HTTP/1\.0\x20200\x20OK\r\nConnection:\x20close\r\nC
+SF:ache-Control:\x20no-cache,no-store\r\nPragma:\x20no-cache\r\nContent-Le
+SF:ngth:\x20153545\r\nSet-Cookie:\x20SID_HTTPS_=b6b9d59e67e218679e9ccd8049
+SF:0045a3de4b8d8d8218909a2529c80a1506948d;\x20PATH=/;\x20Secure;\x20HttpOn
+SF:ly;\x20SameSite=strict\r\nSet-Cookie:\x20_TESTCOOKIESUPPORT_HTTPS_=1;\x
+SF:20PATH=/;\x20Secure;\x20HttpOnly;\x20SameSite=strict\r\nServer:\x20\r\n
+SF:Accept-Ranges:\x20bytes\r\nX-Content-Type-Options:\x20nosniff\r\nX-XSS-
+SF:Protection:\x201;\x20mode=block\r\nX-Frame-Options:\x20SAMEORIGIN\r\nCo
+SF:ntent-Type:\x20text/html;\x20charset=utf-8\r\n\r\n<!DOCTYPE\x20HTML\x20
+SF:PUBLIC\x20\"-//W3C//DTD\x20HTML\x204\.01\x20Transitional//EN\"\x20\"htt
+SF:p://www\.w3\.org/TR/html4/transitional\.dtd\">\n<html\x20xmlns=\"http:/
+SF:/www\.w3\.org/1999/xhtml\">\n<head>\n<meta\x20http-equiv=\"Content-Type
+SF:\"\x20content=\"text/html;\x20charset=utf-8\"\x20/>\n<meta\x20http-equi
+SF:v=\"X-UA-Compatible\"\x20content=\"IE=edge\">\n<link\x20rel=\"shortcut\
+SF:x20icon\"\x20href=\"/img/favicon\.ico\"\x20/>\n<title>&#90;&#88;&#72;&#
+SF:78;&#32;&#70;&#54;&#55;&#48;&#76;&#49;&#7")%r(FourOhFourRequest,587,"HT
+SF:TP/1\.0\x20404\x20Not\x20Found\r\nConnection:\x20close\r\nContent-Type:
+SF:\x20text/html;\x20charset=iso-8859-1\r\nX-Content-Type-Options:\x20nosn
+SF:iff\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Frame-Options:\x20SAM
+SF:EORIGIN\r\nCache-Control:\x20no-cache,no-store\r\nPragma:\x20no-cache\r
+SF:\n\r\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2
+SF:0<html>\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
+SF:\x20<head><title>404\x20Not\x20Found</title></head>\n\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<body\x20bgcolor=\"#FFF
+SF:FFF\"\x20text=\"#000000\"\x20link=\"#2020ff\"\x20vlink=\"#4040cc\">\n\x
+SF:20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h2>404
+SF:\x20Not\x20Found</h2>\n<span>The\x20requested\x20URL\x20was\x20not\x20f
+SF:ound\x20on\x20this\x20server\.</span>\n<div\x20style=\"display:none\">\
+SF:n<ajax_response_xml_root>\n<IF_ERRORSTR>SessionTimeout</IF_ERRORSTR>\n<
+SF:IF_ERRORPARAM>SUCC</IF_ERRORPARAM>\n<IF_ERRORTYPE>SUCC</IF_ERRORTYPE>\n
+SF:</ajax_response_xml_root>\n<span>Padding\x20so\x20that\x20MSIE\x20deign
+SF:s\x20to\x20show\x20this\x20error\x20instead\x20");
+MAC Address: D8:9A:0D:47:AD:4E (Unknown)
+Device type: general purpose
+Running: Linux 3.X|4.X
+OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4
+OS details: Linux 3.2 - 4.14
+Network Distance: 1 hop
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 24.85 seconds

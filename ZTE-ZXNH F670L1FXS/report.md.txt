@@ -1,0 +1,199 @@
+## Scope
+
+The assessment was performed on a consumer'grade GPON router Within a controlled local network enviroment.
+
+Router Security Assessment
+
+Dispositivo: ZTE ZXHN F670L1FXS
+
+1. Información General
+
+IP: 192.168.x.x
+Hostname: internal-gateway
+Fabricante: ZTE
+Modelo: ZXHN F670L1FXS
+Tipo: Router GPON
+Sistema Operativo: Linux (Kernel 3.x – 4.x)
+Entorno: Laboratorio controlado
+
+2. Metodología
+
+Se realizó un análisis de seguridad en un entorno controlado utilizando:
+
+Escaneo de red con Nmap
+Inspección de servicios expuestos
+Análisis de interfaz web
+Evaluación de autenticación
+Observación de comportamiento del sistema
+
+3. Resultados de Escaneo
+
+Puertos abiertos
+
+|Puerto|Estado|	  Servicio   |
+|------|------|--------------|
+|  53  | Open |	DNS (Unbound)|
+|  80  | Open |    HTTP      |
+|  443 | Open |	   HTTPS     |
+
+Puertos relevantes
+
+| Puerto | Estado |Servicio|
+|--------|--------|--------|
+|   23	 |Filtered| Telnet |
+
+4. Análisis de Servicios Web
+
+Redirección HTTP → HTTPS
+El puerto 80 redirige automáticamente a HTTPS (código 302)
+
+Buena práctica de seguridad
+
+-HTTPS activo
+-Panel accesible mediante conexión segura
+-Manejo de sesiones
+
+Cookies detectadas:
+
+SID
+SID_HTTPS_
+
+Características:
+
+HttpOnly
+Secure
+SameSite=Strict
+Headers de seguridad
+X-Content-Type-Options
+X-XSS-Protection
+X-Frame-Options
+
+
+5. Análisis de Autenticación
+
+Usuario
+Usuario fijo: ISP-defined user
+No modificable
+Política de acceso
+Credenciales comunes rechazadas
+Sistema basado en contraseña WPA/WPA2 del dispositivo
+Protección contra ataques
+Bloqueo tras 3 intentos fallidos
+Tiempo de espera: ~1 minuto
+
+-Protección contra fuerza bruta implementada
+
+Riesgo
+Dependencia de contraseña física del dispositivo
+Posible acceso si la etiqueta es expuesta
+Política de cambio
+Se solicita cambio de contraseña al iniciar sesión
+
+-Buena práctica
+
+6. Análisis de Navegación Web
+
+No utiliza URLs visibles
+Navegación basada en IP única
+Acceso directo a rutas no permitido
+
+7. Arquitectura de Interfaz
+
+Comportamiento
+
+Uso de javascript:void(0) en navegación
+Interfaz dinámica tipo SPA
+Indicador de carga entre secciones
+Estructura funcional
+
+-Inicio (PON)
+Estado de red óptica
+
+-Topología
+Dispositivos conectados
+
+-Internet
+WAN
+Seguridad
+NAT
+Control parental
+DDNS
+SNTP
+Port Binding
+Routing dinámico
+Multicast
+
+-Red Local
+WLAN
+LAN
+Routing
+UPNP
+
+-VoIP
+
+-Administración & Diagnóstico
+Sistema
+Cuentas
+Logs
+Band Steering
+Diagnóstico
+
+8. Análisis de Superficie de Ataque
+
+-Áreas críticas
+Configuración WAN
+NAT / Port Binding
+Routing
+Administración de cuentas
+Logs
+
+-Controles positivos
+Interfaz no expuesta por URL
+Navegación controlada
+Uso de HTTPS
+
+-Riesgos potenciales
+Dependencia del frontend (JavaScript)
+Posibles endpoints ocultos
+Amplia superficie funcional
+
+9. Hallazgos de Seguridad
+
+-Hallazgo Severidad
+DNS expuesto (puerto 53)-Media
+Telnet potencial-Media
+Dependencia de contraseña física-Media
+HTTP activo-Baja
+
+10. Nivel de Riesgo Global
+
+MEDIO
+
+Buenas prácticas implementadas
+Riesgos moderados por servicios expuestos y configuración
+
+11. Recomendaciones
+
+Deshabilitar Telnet completamente
+Restringir acceso al DNS
+Deshabilitar HTTP si no es necesario
+Cambiar credenciales por defecto
+Evitar exposición de etiqueta física
+Auditar endpoints internos
+Validar controles del lado servidor
+Deshabilitar WPS
+
+12. Conclusión
+
+El dispositivo presenta una configuración de seguridad aceptable para entornos domésticos, incorporando mecanismos básicos de protección como:
+
+HTTPS
+Control de sesiones
+Protección contra fuerza bruta
+
+Sin embargo, mantiene una superficie de ataque moderada, principalmente debido a:
+
+Servicios expuestos
+Dependencia de credenciales físicas
+Amplia funcionalidad administrativa
+
