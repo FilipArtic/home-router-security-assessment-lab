@@ -20,11 +20,11 @@ Entorno: Laboratorio controlado
 
 Se realizó un análisis de seguridad en un entorno controlado utilizando:
 
-Escaneo de red con Nmap
-Inspección de servicios expuestos
-Análisis de interfaz web
-Evaluación de autenticación
-Observación de comportamiento del sistema
+1.Reconocimiento )eEscaneo con Nmap)
+2.Enumeración de Servicios
+3.Pruebas de autentificación
+4.Análisis de la interface web
+5.Evaluación de riesgos
 
 3. Resultados de Escaneo
 
@@ -197,3 +197,6 @@ Servicios expuestos
 Dependencia de credenciales físicas
 Amplia funcionalidad administrativa
 
+## Limitations
+
+This assessment was limited to local network analyst and did not include exploitation technique.
