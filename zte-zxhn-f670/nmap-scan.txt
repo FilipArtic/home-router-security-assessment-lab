@@ -9,31 +9,31 @@ ip a
     link/ether 08:00:27:63:b0:05 brd ff:ff:ff:ff:ff:ff
     inet 192.168.1.65/24 brd 192.168.1.255 scope global dynamic noprefixroute eth0
        valid_lft 86354sec preferred_lft 86354sec
-    inet6 fe80::5055:7b78:3aed:35bd/64 scope link noprefixroute 
+    inet6 fe80::5055:7b78:3aed:xxxx/64 scope link noprefixroute 
        valid_lft forever preferred_lft forever
 
 ---------------------------------------------------------------------------
 
-ping 192.168.1.254
-PING 192.168.1.254 (192.168.1.254) 56(84) bytes of data.
-64 bytes from 192.168.1.254: icmp_seq=1 ttl=64 time=7.13 ms
-64 bytes from 192.168.1.254: icmp_seq=2 ttl=64 time=3.33 ms
-64 bytes from 192.168.1.254: icmp_seq=3 ttl=64 time=3.18 ms
-64 bytes from 192.168.1.254: icmp_seq=4 ttl=64 time=3.31 ms
-64 bytes from 192.168.1.254: icmp_seq=5 ttl=64 time=3.21 ms
-64 bytes from 192.168.1.254: icmp_seq=6 ttl=64 time=3.26 ms
-64 bytes from 192.168.1.254: icmp_seq=7 ttl=64 time=3.33 ms
-64 bytes from 192.168.1.254: icmp_seq=8 ttl=64 time=3.24 ms
-64 bytes from 192.168.1.254: icmp_seq=9 ttl=64 time=3.28 ms
+ping 192.168.1.x
+PING 192.168.1.x (192.168.1.x) 56(84) bytes of data.
+64 bytes from 192.168.1.x: icmp_seq=1 ttl=64 time=7.13 ms
+64 bytes from 192.168.1.x: icmp_seq=2 ttl=64 time=3.33 ms
+64 bytes from 192.168.1.x: icmp_seq=3 ttl=64 time=3.18 ms
+64 bytes from 192.168.1.x: icmp_seq=4 ttl=64 time=3.31 ms
+64 bytes from 192.168.1.x: icmp_seq=5 ttl=64 time=3.21 ms
+64 bytes from 192.168.1. : icmp_seq=6 ttl=64 time=3.26 ms
+64 bytes from 192.168.1. : icmp_seq=7 ttl=64 time=3.33 ms
+64 bytes from 192.168.1.x: icmp_seq=8 ttl=64 time=3.24 ms
+64 bytes from 192.168.1.x: icmp_seq=9 ttl=64 time=3.28 ms
 
 
 
 ----------------------------------------------------------------------------
 
 
-nmap -sV -O 192.168.1.254      
+nmap -sV -O 192.168.1.x      
 Starting Nmap 7.98 ( https://nmap.org ) at 2026-03-24 11:18 -0400
-Nmap scan report for gpon.net (192.168.1.254)
+Nmap scan report for gpon.net (192.168.1.x)
 Host is up (0.0025s latency).
 Not shown: 996 closed tcp ports (reset)
 PORT    STATE    SERVICE   VERSION
@@ -127,7 +127,7 @@ SF:n<ajax_response_xml_root>\n<IF_ERRORSTR>SessionTimeout</IF_ERRORSTR>\n<
 SF:IF_ERRORPARAM>SUCC</IF_ERRORPARAM>\n<IF_ERRORTYPE>SUCC</IF_ERRORTYPE>\n
 SF:</ajax_response_xml_root>\n<span>Padding\x20so\x20that\x20MSIE\x20deign
 SF:s\x20to\x20show\x20this\x20error\x20instead\x20");
-MAC Address: D8:9A:0D:47:AD:4E (Unknown)
+MAC Address: D8:9A:0D:47:AD:xx (Unknown)
 Device type: general purpose
 Running: Linux 3.X|4.X
 OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4
